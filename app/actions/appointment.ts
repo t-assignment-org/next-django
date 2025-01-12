@@ -77,7 +77,7 @@ async function __debugDelay(timeout = 2000) {
 
 export async function createAppointment(
   appointment: AppointmentPayload
-): Promise<AppointmentPayload> {
+): Promise<Appointment> {
   __debugRandomError();
 
   const data = {

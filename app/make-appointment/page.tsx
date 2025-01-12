@@ -28,22 +28,18 @@ export default function MakeAppointment() {
       <h1 className="text-2xl font-bold">Make an Appointment</h1>
       {selectedDate ? (
         <div className="flex flex-col md:flex-row gap-8">
-          <div className="w-full md:w-1/3">
-            <h2 className="text-lg font-semibold mb-4">Select Time</h2>
-            <TimeSlots
-              selectedDate={selectedDate}
-              onTimeSelect={handleTimeSelect}
-              setIsLoading={setIsTimeSlotsLoading}
-            />
-          </div>
-          <div className="w-full md:w-2/3">
-            <h2 className="text-lg font-semibold mb-4">Appointment Details</h2>
-            <AppointmentForm
-              selectedDate={format(selectedDate, "dd/MM/yyyy")}
-              selectedTime={selectedTime ? selectedTime : null}
-              isTimeSlotsLoading={isTimeSlotsLoading}
-            />
-          </div>
+          <TimeSlots
+            className="w-full md:w-1/3"
+            selectedDate={selectedDate}
+            onTimeSelect={handleTimeSelect}
+            setIsLoading={setIsTimeSlotsLoading}
+          />
+          <AppointmentForm
+            className="w-full md:w-2/3"
+            selectedDate={format(selectedDate, "dd/MM/yyyy")}
+            selectedTime={selectedTime ? selectedTime : null}
+            isTimeSlotsLoading={isTimeSlotsLoading}
+          />
         </div>
       ) : (
         <p className="text-lg text-gray-600">
