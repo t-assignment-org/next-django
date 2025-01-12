@@ -48,14 +48,8 @@ export async function getAppointments(): Promise<Appointment[]> {
   return appointments;
 }
 
-export async function getAppointmentDates(): Promise<string[]> {
+// TODO: Add month to get date for
+export async function getAppointmentDates(): Promise<Date[]> {
   await new Promise((resolve) => setTimeout(resolve, 500));
-  return [
-    ...new Set(
-      appointments.map((app) => {
-        const [day, month, year] = app.date.split("/");
-        return `${day}/${month}/${year}`;
-      })
-    ),
-  ];
+  return Array.from(new Set(appointments.map((app) => app.date)));
 }
