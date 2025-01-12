@@ -4,7 +4,7 @@ interface MainProps extends React.PropsWithChildren {}
 
 const Main: React.FC<MainProps> = ({ children }) => {
   return (
-    <div className="flex items-center justify-center flex-col space-y-16 h-screen">
+    <div className="flex items-center justify-center flex-col space-y-16">
       {children}
     </div>
   );
