@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 interface AppointmentFormProps {
   selectedDate: string | null;
@@ -10,7 +10,7 @@ export function AppointmentForm({
   selectedDate,
   isTimeSlotsLoading,
 }: AppointmentFormProps) {
-  const router = useRouter();
+  // const router = useRouter();
 
   return null;
 }
