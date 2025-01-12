@@ -1,9 +1,10 @@
 "use client";
 
+import { format, parse } from "date-fns";
+
 import { AppointmentForm } from "@/app/components/AppointmentForm";
 import React from "react";
 import { TimeSlots } from "@/app/components/TimeSlots";
-import { format } from "date-fns";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 
@@ -14,7 +15,7 @@ export default function MakeAppointment() {
 
   const selectedDate = React.useMemo(() => {
     const dateStr = searchParams.get("date");
-    const date = new Date(dateStr || "");
+    const date = parse(dateStr || "", "dd/MM/yyyy", new Date());
 
     return isNaN(+date) ? null : date;
   }, [searchParams]);

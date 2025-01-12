@@ -48,9 +48,7 @@ export function Calendar({ initialDates }: CalendarProps) {
       day
     );
 
-    const formattedDate = format(selectedDate, "dd/MM/yyyy");
-    const defaultTime = "10:00";
-    router.push(`/make-appointment?date=${formattedDate}&time=${defaultTime}`);
+    router.push(`/make-appointment?date=${format(selectedDate, "dd/MM/yyyy")}`);
   };
 
   const renderCalendarDays = () => {
