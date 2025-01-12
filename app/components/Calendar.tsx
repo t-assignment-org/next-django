@@ -15,11 +15,14 @@ import { Button } from "@/components/ui/button";
 import { getAppointmentDates } from "../actions/appointment";
 import { useRouter } from "next/navigation";
 
-interface CalendarProps {}
+interface CalendarProps {
+  initialDates: Date[];
+}
 
-export function Calendar({}: CalendarProps) {
+export function Calendar({ initialDates }: CalendarProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [appointmentDates, setAppointmentDates] = useState<Date[]>();
+  const [appointmentDates, setAppointmentDates] =
+    useState<Date[]>(initialDates);
   const router = useRouter();
 
   useEffect(() => {
