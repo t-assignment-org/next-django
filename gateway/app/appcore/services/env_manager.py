@@ -17,8 +17,11 @@
         from appcore.services.env_manager import ENVS
         ENVS["SECRET_KEY"]
 """
+
 import os
 from typing import Any
+
+from dotenv import load_dotenv
 
 ENV_NAMES = [
     "DEPLOYENV",  # 'dev' or 'prod
@@ -43,6 +46,8 @@ ENV_NAMES = [
 
 ENVS: dict[str, Any] = {}
 errs: list[Any] = []
+
+load_dotenv()
 
 
 def convert_env(env: str, value: str) -> Any:
@@ -79,4 +84,5 @@ for env in ENV_NAMES:
         errs.append(str(e).strip("'"))
 
 if errs:
+    raise EnvironmentError(f'Envs not found: {", ".join(errs)}')
     raise EnvironmentError(f'Envs not found: {", ".join(errs)}')

@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-from appcore.services.env_manager import ENVS
 
+from appcore.services.env_manager import ENVS
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,9 +44,9 @@ INSTALLED_APPS = [
     "ninja",
     "corsheaders",
     # Own
-    "appcore",
-    "appaccount",
-    "appdemo",  # remove when using this template
+    # "appcore",
+    # "appaccount",
+    "appappointment",
 ]
 
 MIDDLEWARE = [
@@ -163,4 +163,4 @@ CACHES = {
 }
 
 # Extends the default user model
-AUTH_USER_MODEL = "appaccount.User"
+# AUTH_USER_MODEL = "appaccount.User"
