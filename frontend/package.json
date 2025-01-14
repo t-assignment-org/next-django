@@ -6,9 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gen-api": "openapi-generator-cli generate -i http://127.0.0.1:8000/api/openapi.json -g typescript-fetch --type-mappings object=any -o ./api-autogen/gateway-api"
   },
   "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.15.3",
     "@radix-ui/react-alert-dialog": "^1.1.4",
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.1",

@@ -1,0 +1,9 @@
+.openapi-generator-ignore
+apis/AppointmentsApi.ts
+apis/index.ts
+index.ts
+models/AppointmentGetOut.ts
+models/AppointmentPostIn.ts
+models/HttpError.ts
+models/index.ts
+runtime.ts
