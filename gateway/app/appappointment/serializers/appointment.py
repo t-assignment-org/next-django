@@ -1,4 +1,5 @@
 import datetime
+from uuid import UUID
 
 from appappointment.models import Appointment
 from ninja import Field, ModelSchema
@@ -12,11 +13,11 @@ class AppointmentSchema(ModelSchema):
 
 
 class AppointmentGetOut(AppointmentSchema):
+    id: UUID
     date: datetime.datetime
     email: EmailStr
     description: str
     created_at: datetime.datetime
-
 
 class AppointmentPostIn(ModelSchema):
     # NOTE: Maybe better to stick with 'yyyy-mm-dd hh:mm' format and convert to date?
